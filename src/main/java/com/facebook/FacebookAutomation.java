@@ -14,13 +14,42 @@ public class FacebookAutomation {
            driver.get("https://www.facebook.com/");
            
            
-           // 1. Login
-           driver.findElement(By.id("email")).sendKeys("waseemhanif@gmail.com"); 
-           driver.findElement(By.name("pass")).sendKeys("1234"); 
-           driver.findElement(By.name("login")).click();
+       /*    // 1. Login
+           driver.findElement(By.id("email")).sendKeys("03042021926"); 
+           driver.findElement(By.name("pass")).sendKeys("samar2487"); 
+         //  driver.findElement(By.name("login")).click();
            sleep(); // Sleep for 5 seconds
-     
+           */
+           
+           
+           // 1. Click on "Create new account"
+           driver.findElement(By.linkText("Create new account")).click();
+           driver.findElement(By.name("firstname")).sendKeys("waseem"); 
+           driver.findElement(By.name("lastname")).sendKeys("hanif"); 
+           driver.findElement(By.name("reg_email__")).sendKeys("muhammadiqbal5915910gmail.com");
+           driver.findElement(By.name("reg_passwd__")).sendKeys("Password123!"); 
 
+        
+           driver.findElement(By.id("day")).sendKeys("15");
+           driver.findElement(By.id("month")).sendKeys("Apr");
+           driver.findElement(By.id("year")).sendKeys("1990"); 
+           driver.findElement(By.xpath("//label[contains(text(),'Male')]")).click(); 
+           sleep();
+           driver.findElement(By.name("websubmit")).click();
+         
+
+           
+           
+           
+           
+           
+           
+           
+           
+     
+           
+           
+    // driver.close();
 
       }
 	
@@ -29,7 +58,7 @@ public class FacebookAutomation {
 	  {
 	        try 
 	        {
-	            Thread.sleep(5000); 
+	            Thread.sleep(2000); 
 	        } catch (InterruptedException e) 
 	        {
 	            e.printStackTrace();
@@ -39,6 +68,8 @@ public class FacebookAutomation {
     public static void main(String[] args) 
     {
         new FacebookAutomation();
+        
+        
     }
 
 }
