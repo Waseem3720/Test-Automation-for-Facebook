@@ -14,15 +14,16 @@ public class FacebookAutomation {
            driver.get("https://www.facebook.com/");
            
            
-       /*    // 1. Login
+       /*    //  Login
            driver.findElement(By.id("email")).sendKeys("03042021926"); 
            driver.findElement(By.name("pass")).sendKeys("samar2487"); 
-         //  driver.findElement(By.name("login")).click();
+           driver.findElement(By.name("login")).click();
            sleep(); // Sleep for 5 seconds
            */
            
            
-           // 1. Click on "Create new account"
+        /*
+           // Create New Account
            driver.findElement(By.linkText("Create new account")).click();
            driver.findElement(By.name("firstname")).sendKeys("waseem"); 
            driver.findElement(By.name("lastname")).sendKeys("hanif"); 
@@ -35,21 +36,23 @@ public class FacebookAutomation {
            driver.findElement(By.id("year")).sendKeys("1990"); 
            driver.findElement(By.xpath("//label[contains(text(),'Male')]")).click(); 
            sleep();
-           driver.findElement(By.name("websubmit")).click();
+           driver.findElement(By.name("websubmit")).click();  */
          
+          
+           //  Forget Password
+           driver.findElement(By.linkText("Forgotten password?")).click(); 
+           driver.findElement(By.cssSelector("input[type='text'")).sendKeys("iqbalali5910.com"); 
+           driver.findElement(By.cssSelector("button[value='1'")).click(); 
+           sleep();
+          
 
            
            
+          
            
            
            
-           
-           
-           
-     
-           
-           
-    // driver.close();
+           driver.close();
 
       }
 	
