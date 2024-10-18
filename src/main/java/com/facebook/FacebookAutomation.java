@@ -14,12 +14,15 @@ public class FacebookAutomation {
            driver.get("https://www.facebook.com/");
            
            
-       /*    //  Login
+         //  Login
            driver.findElement(By.id("email")).sendKeys("03042021926"); 
            driver.findElement(By.name("pass")).sendKeys("samar2487"); 
+           
+           
+           sleep(); 
            driver.findElement(By.name("login")).click();
            sleep(); // Sleep for 5 seconds
-           */
+          
            
            
         /*
@@ -36,22 +39,50 @@ public class FacebookAutomation {
            driver.findElement(By.id("year")).sendKeys("1990"); 
            driver.findElement(By.xpath("//label[contains(text(),'Male')]")).click(); 
            sleep();
-           driver.findElement(By.name("websubmit")).click();  */
+           driver.findElement(By.name("websubmit")).click();  
          
-          
+           sleep();
            //  Forget Password
            driver.findElement(By.linkText("Forgotten password?")).click(); 
-           driver.findElement(By.cssSelector("input[type='text'")).sendKeys("iqbalali5910.com"); 
-           driver.findElement(By.cssSelector("button[value='1'")).click(); 
            sleep();
-          
+           driver.findElement(By.className("inputtext _9o1w")).sendKeys("iqbalali5910.com"); 
+           driver.findElement(By.name("did_submit")).click(); 
+           sleep(); */
 
            
            
+           sleep(); 
+         
+           driver.findElement(By.xpath("//body")).click(); 
+
+           sleep(); 
+
+           try {
+               driver.findElement(By.xpath("//button[contains(text(), 'Allow')]")).click(); // Click Allow
+           } catch (NoSuchElementException e) {
+               System.out.println("No notification appeared.");
+           } 
+
+           driver.findElement(By.xpath("//span[contains(text(), \"What's on your mind, Sammar?\")]")).click();
+           sleep();
+
+           WebElement postBox = driver.findElement(By.xpath("//div[@aria-label=\"What's on your mind, Sammar?\"]"));
+           postBox.click();
+           postBox.sendKeys("Hello, world!");
+           sleep();
+
+           driver.findElement(By.xpath("//div[contains(@aria-label, 'Post')]")).click();
+           sleep();
+
+
+
           
+          
+
            
-           
-           
+           sleep(); 
+           sleep(); 
+          
            driver.close();
 
       }
@@ -61,7 +92,7 @@ public class FacebookAutomation {
 	  {
 	        try 
 	        {
-	            Thread.sleep(2000); 
+	            Thread.sleep(5000); 
 	        } catch (InterruptedException e) 
 	        {
 	            e.printStackTrace();
